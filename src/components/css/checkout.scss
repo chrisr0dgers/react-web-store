@@ -1,0 +1,30 @@
+.transition{
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.checkOut{
+    background-color: #03c03c;
+    cursor: pointer;
+    border: 0;
+    @extend .transition;
+    &:hover{
+        background-color: #000;
+        @extend .transition;
+    }
+}
+
+.smText{
+    font-size: 10px;
+}
+
+.submitPromo{
+    background-color: #128C7E;
+    cursor: pointer;
+    border: 0;
+    @extend .transition;
+    &:hover{
+        background-color: #000;
+        @extend .transition;
+    }
+}

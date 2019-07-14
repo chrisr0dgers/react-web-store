@@ -1,0 +1,14 @@
+.nav-wrapper{
+    background-color: #18a2dd;
+    ul{
+        padding: 0;
+        li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 8px;
+            a{
+                color: #fff;
+            }
+        }
+    }
+}

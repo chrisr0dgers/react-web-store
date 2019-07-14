@@ -1,0 +1,15 @@
+.transition{
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.removeItem{
+    background-color: #EE6E73;
+    border: 0;
+    cursor: pointer;
+    @extend .transition;
+    &:hover{
+        background-color: #000;
+        @extend .transition;
+    }
+}
