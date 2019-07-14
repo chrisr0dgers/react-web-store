@@ -10,7 +10,7 @@ const Navbar = () => {
         
         <nav className="nav-wrapper py-3">
             <div className="container">
-                <Link to="/" className="brand-logo text-light">M2E</Link>
+                <Link to="/" className="text-light">M2E</Link>
 
                 <ul className="float-right">
                     <li className="mr-4"><Link to="/">Shop</Link></li>

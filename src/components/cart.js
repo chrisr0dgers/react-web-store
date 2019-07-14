@@ -37,10 +37,7 @@ class Cart extends Component {
                             <div className="cartItem_details float-left">
                                 <h3 className="title">{item.title}</h3>
                                 <p>{item.desc}</p>
-                                <div className="add-remove">
-                                    
-                                </div>
-                                <ul className="p-0 m-0 list-unstyled">
+                                <ul className="p-0 m-0 list-unstyled mb-0">
                                     <li className="d-inline-block mr-2"><b>Price:</b> £{item.price}</li>
                                     <li className="d-inline-block mr-3"><b>Quantity:</b> {item.quantity}</li>
                                     <li className="d-inline-block">
@@ -48,7 +45,7 @@ class Cart extends Component {
                                         <Link className="cartItem_details--subtract" to="/cart"><FontAwesomeIcon onClick={() => { this.handleSubtractQuantity(item.id) }} icon={faArrowDown} /></Link>
                                     </li>
                                 </ul>
-                                <p>Items left in stock: {itemStock}</p>
+                                {/* <p>Items left in stock: {itemStock}</p> */}
                                 <button className="removeItem py-1 text-light mt-2 remove" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
 
                                 <hr></hr>

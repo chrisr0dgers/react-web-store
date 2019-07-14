@@ -4,34 +4,6 @@ import "./css/checkout.scss";
 //import { addShipping } from './actions/cartActions'
 class Recipe extends Component{
     
-    // componentWillUnmount() {
-    //      if(this.refs.shipping.checked)
-    //           this.props.substractShipping()
-    // }
-
-    handleChecked = (e)=>{
-        // if(e.target.checked){
-        //     this.props.addShipping();
-        // }
-        // else{
-        //     this.props.substractShipping();
-        // }
-        // if (e === 'Voucher') {
-        //     this.props.addShipping();
-        // }else{
-        //     this.props.substractShipping();
-        // }
-    }
-
-    // handle(event) {
-    //     event.preventDefault();
-    //     let i = event.target.value
-    //     if (i === 'Voucher') {
-    //         if (this.props.total >= 0) {
-    //             this.props.substractShipping();
-    //         }
-    //     }
-    // }
     constructor(props) {
         super(props)
 
@@ -48,6 +20,7 @@ class Recipe extends Component{
                 this.props.substractShipping();
                 alert('£5 discount added!');
                 document.querySelector('.submitPromo').innerHTML = "DISCOUNT ADDED!";
+                document.querySelector('.shippingCost').innerHTML = "£5 discount";
             }
         } 
     };
@@ -61,35 +34,17 @@ class Recipe extends Component{
                 <div className="collection row">
                     <div className="collection-item list-unstyled">
                             <label>
-                                {/* <input type="text" ref="shipping"  onChange={this.handleChecked} /> */}
                                 <form onSubmit={this.handleSubmit}>
                                     <input type="text" ref={this.textInput} />
                                     <button className="submitPromo text-light py-1">Submit</button>
                                     <p className="smText">Promo code for £5 discount (Hint: PROMO)</p>
                                 </form>
                             </label>
-
-                        {/* <form onSubmit={this.handle}>
-                            <input type="text" ref="shipping" />
-                            <button>Submit</button>
-                            <span className="ml-3">Shipping(+6£)</span>
-                            
-                        </form> */}
-
-                        {/* <div>
-                            <h1>React Ref - createRef</h1>
-                            <h3>Value: {this.state.value}</h3>
-                            <form onSubmit={this.handleSubmit}>
-                                <input type="text" ref={this.textInput} />
-                                <button>Submit</button>
-                            </form>
-                        </div> */}
-
                     </div>
                     <div className="collection-item list-unstyled w-100"><b>Total: £{Math.round(this.props.total)}</b></div>
-                    <div className="shippingCost ml-0 smText">Shipping(+£5)</div>
+                    <div className="shippingCost ml-0 smText"></div>
                 </div>
-                <div className="checkout row">
+                <div className="checkout row  mb-4">
                     <button className="checkOut py-1 text-light mt-2">Checkout</button>
                 </div>
             </div>
