@@ -9,29 +9,30 @@ class Home extends Component {
 
     handleClick = (id,stock) => {
         this.props.addToCart(id);
-        this.props.updateStock(stock);
+        // this.props.updateStock(stock);
         alert('Item added to cart!');
-        return stock - 1;
+        
+        // return stock - 1;
     }
 
     render() {
+
         let itemList = this.props.items.map(item => {
             return (
-                    <div className="col-lg-3 mb-3" key={item.id}>
+                    <div className="col-lg-4 col-md-4 col-sm-6 mb-3 text-center" key={item.id}>
                         <div className="card-image">
-                            <img className="w-100" src={item.img} alt={item.title} />
-                        <i className="fas fa-shopping-cart"></i>
-                            <span className="card-title">{item.title}</span>
-                        
+                            <img className="m-auto d-block" src={item.img} alt={item.title} />
                         </div>
                     
                         <div className="card-content py-2">
+                            <h3 className="card-title mb-1 mt-2">{item.title}</h3>
                             <p>{item.desc}</p>
                             <p className="mb-0"><b>Category: {item.cat}</b></p>
                             <p><b>Price: £{item.price}</b></p>
                             {/* <p><b>{item.stock}</b></p> */}
                         <span to="/" className="addToCart p-2 text-light mb-2" onClick={() => { this.handleClick(item.id,item.stock) }}><FontAwesomeIcon icon={faShoppingCart} />&nbsp;Add to cart</span>
                         </div>
+                        <hr></hr>
                     </div>
 
 

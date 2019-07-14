@@ -16,11 +16,11 @@ class Recipe extends Component{
         // else{
         //     this.props.substractShipping();
         // }
-        if (e === 'Voucher') {
-            this.props.addShipping();
-        }else{
-            this.props.substractShipping();
-        }
+        // if (e === 'Voucher') {
+        //     this.props.addShipping();
+        // }else{
+        //     this.props.substractShipping();
+        // }
     }
 
     // handle(event) {
@@ -46,8 +46,8 @@ class Recipe extends Component{
         if (this.state.value === 'PROMO') {
             if (this.props.total >= 0) {
                 this.props.substractShipping();
-                document.querySelector('.shippingCost').innerHTML = "FREE SHIPPING ADDED!";
-                alert('£5 free shipping discount added!');
+                alert('£5 discount added!');
+                document.querySelector('.submitPromo').innerHTML = "DISCOUNT ADDED!";
             }
         } 
     };
@@ -65,7 +65,7 @@ class Recipe extends Component{
                                 <form onSubmit={this.handleSubmit}>
                                     <input type="text" ref={this.textInput} />
                                     <button className="submitPromo text-light py-1">Submit</button>
-                                    <p className="smText">Promo code for free shipping (Hint: PROMO)</p>
+                                    <p className="smText">Promo code for £5 discount (Hint: PROMO)</p>
                                 </form>
                             </label>
 

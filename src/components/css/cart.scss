@@ -13,3 +13,36 @@
         @extend .transition;
     }
 }
+
+.cartItem{
+    &_details{
+        width: 70%;
+        &--add{
+            color:green;
+        }
+        &--subtract{
+            color: red;
+        }
+    }
+    &_img{
+        width: 30%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .cartItem{
+        text-align: center;
+        &_details{
+            width: 100%;
+        }
+        &_img{
+            width: 100%;
+            img{
+                max-width: 150px;
+            }
+        }
+    }
+}
+
+

@@ -29,27 +29,32 @@ class Cart extends Component {
                     let itemStock = item.stock - item.quantity;
                     return (
 
-                        <li className="col-lg-3 list-unstyled mb-3" key={item.id}>
-                            <div className="item-img">
-                                <img src={item.img} alt={item.img} className="w-100" />
+                        <div className="col-lg-12 list-unstyled mb-3 cartItem" key={item.id}>
+                            <div className="cartItem_img float-left pr-2">
+                                <img src={item.img} alt={item.img} className="w-75" />
                             </div>
 
-                            <div className="item-desc">
-                                <span className="title">{item.title}</span>
+                            <div className="cartItem_details float-left">
+                                <h3 className="title">{item.title}</h3>
                                 <p>{item.desc}</p>
-                                <p><b>Price: {item.price}$</b></p>
-                                <p>
-                                    <b>Quantity: {item.quantity}</b>
-                                </p>
-                                <p>Items left in stock: {itemStock}</p>
                                 <div className="add-remove">
-                                    <Link className="mr-3" to="/cart"><FontAwesomeIcon onClick={() => { this.handleAddQuantity(item.id) }} icon={faArrowUp} /></Link>
-                                    <Link  to="/cart"><FontAwesomeIcon onClick={() => { this.handleSubtractQuantity(item.id) }} icon={faArrowDown} /></Link>
+                                    
                                 </div>
+                                <ul className="p-0 m-0 list-unstyled">
+                                    <li className="d-inline-block mr-2"><b>Price:</b> £{item.price}</li>
+                                    <li className="d-inline-block mr-3"><b>Quantity:</b> {item.quantity}</li>
+                                    <li className="d-inline-block">
+                                        <Link className="mr-2 cartItem_details--add" to="/cart"><FontAwesomeIcon onClick={() => { this.handleAddQuantity(item.id) }} icon={faArrowUp} /></Link>
+                                        <Link className="cartItem_details--subtract" to="/cart"><FontAwesomeIcon onClick={() => { this.handleSubtractQuantity(item.id) }} icon={faArrowDown} /></Link>
+                                    </li>
+                                </ul>
+                                <p>Items left in stock: {itemStock}</p>
                                 <button className="removeItem py-1 text-light mt-2 remove" onClick={() => { this.handleRemove(item.id) }}>Remove</button>
+
+                                <hr></hr>
                             </div>
                             
-                        </li>
+                        </div>
 
                     )
                 })
@@ -64,7 +69,7 @@ class Cart extends Component {
         return (
             <div className="container">
                 <div className="cart">
-                    <h3 className="my-2">Your cart contains {this.props.items.length} items:</h3>
+                    <h3 className="my-2 mt-4">Your cart contains {this.props.items.length} item(s):</h3>
                     <hr></hr>
                     <ul className="row p-0">
                         {addedItems}
